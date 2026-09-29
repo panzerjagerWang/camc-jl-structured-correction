@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CAMC-JL · Structured Japanese Correction</title>
+<meta name="description" content="Research code, model weights, and an open metadata-and-results dataset for structured Japanese grammatical error correction.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><a class="brand" href="#top">CAMC<span>—</span>JL</a><nav aria-label="Main navigation"><a href="#method">Method</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#reproduce">Reproduce</a></nav></header>
+<main id="top">
+<section class="hero">
+<p class="eyebrow">Japanese NLP · Research artifact · 2026</p>
+<h1>Find the span.<br>Then make the correction.</h1>
+<p class="paper-title">Structured Localization and Auxiliary Adaptation<br class="wide"> for Japanese Grammatical Error Correction</p>
+<p class="lead">A fixed correction interval, a compact local editor, and an adapted language model that must justify replacing the local edit.</p>
+<div class="actions"><a class="button primary" href="paper/manuscript.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="downloads/CAMC-JL-metadata-results-v2.0.0.zip" download>Download dataset ↓</a><a class="button" data-repository hidden href="#">Code &amp; weights ↗</a></div>
+<p class="status" id="publication-status">Release package prepared. GitHub publication pending.</p>
+<div class="stats"><div><strong>759</strong><span>metadata records</span></div><div><strong>10,062</strong><span>numerical evaluation rows</span></div><div><strong>3</strong><span>trained adapter seeds</span></div><div><strong>33.04<span>%</span></strong><span>historical ExactMatch</span></div></div>
+</section>
+<section id="method">
+<div class="section-heading"><p class="eyebrow">01 / Method</p><h2>Localization before generation.</h2></div>
+<p class="section-lead">The context-gated GRU and sparse frontend choose one interval and a local edit. The Qwen3-4B decoder proposes a replacement for that same interval. A valid generation is used only when its normalized log likelihood is strictly higher; otherwise, the compact edit stays.</p>
+<figure class="pipeline"><a href="assets/Fig1_pipeline.pdf"><img src="assets/Fig1_pipeline.png" alt="Training and inference pipeline: auxiliary fitting followed by source adaptation, frozen frontend localization, four-beam generation, validity and likelihood comparison, and compact fallback." loading="eager"></a><figcaption>Training and inference pipeline. <a href="assets/Fig1_pipeline_editable.vsdx">Editable Visio</a> · <a href="assets/Fig1_pipeline.pdf">Vector PDF</a></figcaption></figure>
+<div class="cards"><article><span class="number">01</span><h3>Compact frontend</h3><p>4.235 million stored values across recurrent, sparse and context-gating components. CPU inference is available separately.</p></article><article><span class="number">02</span><h3>Auxiliary adaptation</h3><p>16,000 simulated error pairs, followed by ten source-fitting epochs on 200 development examples. Three final seeds are provided.</p></article><article><span class="number">03</span><h3>Constrained replacement</h3><p>Four-beam generation, a fixed interval, output checks and an EOS-inclusive likelihood comparison preserve the local correction contract.</p></article></div>
+</section>
+<section class="tinted" id="dataset">
+<div class="section-heading"><p class="eyebrow">02 / Open dataset</p><h2>Metadata and numerical results,<br>ready for analysis.</h2></div>
+<p class="section-lead">CAMC-JL v2.0.0 provides an open evaluation dataset: a 759-record metadata index and 10,062 per-example numerical records from six methods and three seeds.</p>
+<div class="dataset-grid"><div><h3>Included</h3><ul><li>200 development and 559 historical test IDs</li><li>Source-corpus and error-category metadata</li><li>Opaque grouping keys and development folds</li><li>Six paper metrics and two locator diagnostics</li><li>Aggregate tables and paired interval analysis</li></ul></div><div><h3>Scope</h3><p>Learner sentences, gold corrections and raw predictions are excluded. The source texts remain subject to Natane and ICJS/TUFS access conditions.</p><p>This release supports numerical reanalysis. It is not a full-text training corpus, and text-level rescoring requires separate lawful source access.</p><p><strong>License:</strong> CC BY 4.0 for author-created metadata and results.</p></div></div>
+<div class="actions"><a class="button primary" href="downloads/CAMC-JL-metadata-results-v2.0.0.zip">Download v2.0.0 ↓</a><a class="button" href="downloads/DATASET_CARD.md">Dataset card</a><a class="button" href="downloads/metadata.csv">Metadata CSV</a></div>
+</section>
+<section id="results">
+<div class="section-heading"><p class="eyebrow">03 / Evidence</p><h2>A measured improvement.<br>A bounded claim.</h2></div>
+<div class="results-grid"><div><p class="section-lead">Auxiliary plus source adaptation reaches <strong>33.04%</strong> ExactMatch, compared with <strong>27.97%</strong> for the matched source-only 4B model.</p><p>The paired gain is 5.07 percentage points, with a six-metric-adjusted interval of [1.18, 9.32]. Localization ties. The incremental RevisionSimilarity and SoftMatch intervals include zero.</p><p class="note">Historical test reuse, source overlap and poor external localization limit generalization. These results do not establish classroom effectiveness or global state of the art.</p></div>
+<div class="table-wrap"><table><caption>Historical ExactMatch · three-seed mean</caption><thead><tr><th scope="col">Method</th><th scope="col">ExactMatch</th></tr></thead><tbody>
+<tr><td>Character GRU</td><td>14.31%</td></tr><tr><td>Productive fusion</td><td>17.05%</td></tr><tr><td>1.7B auxiliary/source</td><td>26.77%</td></tr><tr><td>1.7B context frontend</td><td>26.71%</td></tr><tr><td>Matched 4B source-only</td><td>27.97%</td></tr><tr class="selected"><td>4B auxiliary + source</td><td>33.04%</td></tr></tbody></table><p class="small">The same 559 historical cases; values are percentages.</p></div></div>
+<div class="figure-grid"><figure><a href="assets/Fig2_error_budget.png"><img src="assets/Fig2_error_budget.png" alt="Historical error decomposition into localization, replacement and exact-correction outcomes." loading="lazy"></a><figcaption>Where errors remain</figcaption></figure><figure><a href="assets/Fig3_matched.png"><img src="assets/Fig3_matched.png" alt="Paired differences and uncertainty across six evaluation metrics." loading="lazy"></a><figcaption>Matched comparisons and uncertainty</figcaption></figure><figure><a href="assets/Fig4_subgroups.png"><img src="assets/Fig4_subgroups.png" alt="Historical results for seen-pair, unseen-pair and no-shared-source-unit subsets." loading="lazy"></a><figcaption>Overlap-aware subgroup analysis</figcaption></figure><figure><a href="assets/Fig5_development.png"><img src="assets/Fig5_development.png" alt="Development controls comparing auxiliary fitting, source adaptation and likelihood fallback." loading="lazy"></a><figcaption>Development controls</figcaption></figure></div>
+</section>
+<section class="tinted" id="reproduce">
+<div class="section-heading"><p class="eyebrow">04 / Reproduce</p><h2>Code, weights and a pinned base.</h2></div>
+<p class="section-lead">The release includes the portable inference method, an adapter-training implementation, three trained 4B adapters and the compact frontend. Large weights are delivered as GitHub Release assets with SHA-256 checksums.</p>
+<div class="dataset-grid"><div><h3>Run the CPU frontend</h3><pre><code>pip install numpy==2.3.1 torch==2.11.0
+python scripts/download_weights.py --frontend-only
+python model/frontend/predict.py --list-error-types</code></pre><p class="small">Run these commands from the cloned repository. The README includes the full 4B setup and inference examples.</p></div><div><h3>Recompute numerical analyses</h3><pre><code>python scripts/reproduce_results.py</code></pre><p>The script recomputes historical means and paired cluster intervals using released numerical records. The upstream 4B base is downloaded separately at an immutable revision.</p><p class="note">A fresh GPU replay of the full auxiliary portable export remains pending. No new training or successful GPU replay is claimed by this release.</p></div></div>
+<div class="actions"><a class="button primary" data-release hidden href="#">Download weights ↗</a><a class="button" href="downloads/MODEL_CARD.md">Model card</a><a class="button" href="downloads/WEIGHTS.json">Weight checksums</a></div>
+</section>
+<section class="cite"><h2>Cite this artifact</h2><p>CAMC-JL contributors (2026). <em>Structured Localization and Auxiliary Adaptation for Japanese Grammatical Error Correction.</em> Research manuscript and CAMC-JL metadata-and-results dataset, v2.0.0.</p><p class="small">A journal DOI is not yet available. Cite the repository URL and release version when reusing the artifact.</p></section>
+</main>
+<footer><a class="brand" href="#top">CAMC<span>—</span>JL</a><p>Code: MIT · Author-trained weights: Apache 2.0 · Metadata, results &amp; figures: CC BY 4.0</p></footer>
+<script src="site.js"></script>
+</body></html>

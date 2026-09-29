@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+model/base/
+model/frontend/*.npz
+model/frontend/*.pt
+model/adapters/*/*.safetensors
+*.log
+*.aux
+*.out
+*.synctex.gz

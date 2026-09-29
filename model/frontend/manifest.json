@@ -1,0 +1,33 @@
+{
+  "model": "Frozen context-gated GRU/linear frontend",
+  "seeds": [
+    20260927,
+    20260928,
+    20260929
+  ],
+  "default_seed_selected_before_historical": 20260927,
+  "total_parameters_and_coefficients": 4234774,
+  "original_frontend_values": 3565554,
+  "crop_locator_values": 669195,
+  "gate_values": 25,
+  "files_sha256": {
+    "README.md": "857def6f848b021279c5cbb9f833a1fb99b10959c2a445b147bb398933f70433",
+    "base_predict.py": "ec1deb63d3b4d573e2d82a15c66881acf660ebc416e415bb3b8daf3c45e74411",
+    "crop_gate.npz": "6308b9f375d607eb5d554c4b97fb4b38e61436e1b01a2c0ef270966fac92e341",
+    "gru.py": "909b6be5cb4e011f3a5840bb6e46efdaa7fcd30b6e13c104c9792ebdcb0e5c53",
+    "gru_seed_20260927.pt": "e14807739dfab9f9fd01bc5fdb5ea0caf6ae71cfcea39c1ed94255c83267cd1c",
+    "gru_seed_20260928.pt": "1a04c94a1cda072ca1dab602b741e06b119ed5648335a526a0aaa9ce41201c3e",
+    "gru_seed_20260929.pt": "bcfa065d7711ec25b643771b26442094ea0b5332660a7f2cd910528a5bd2bc90",
+    "linear.npz": "71b09f4036088b13a2ad8a0b662cf24215f67c0da76b8d5511dfac8beedc5e05",
+    "predict.py": "8306c4cafd0d594dc77bb14da49e9542b648ad6a846507b3df5ba4c6aeaa15a9"
+  },
+  "source_sha256": {
+    "private/context_frontend_final/crop_noposition.pkl": "efd440944810928c3a760709c5538fc916f3c3f158fe96e7cfe3dad1f11df27c",
+    "private/context_frontend_final/boundary.pkl": "e28c3f1fe65fd4812a04f72f9b0556df28dd48f7bde6b06c60280bfd735c41bc",
+    "scripts/export_context_frontend_portable.py": "62daf5e6877025a0e22b29c517b5989ea1a0ef1281800fe3f6de4d42392aca9b",
+    "scripts/context_frontend_portable_predict.py": "8306c4cafd0d594dc77bb14da49e9542b648ad6a846507b3df5ba4c6aeaa15a9",
+    "portable/fusion_cpu/manifest.json": "9128af5dcd73d30d74eebcd50155489bfdc36e26f8822e3228a768367d8728ae"
+  },
+  "training_data_included": false,
+  "large_language_model_included": false
+}

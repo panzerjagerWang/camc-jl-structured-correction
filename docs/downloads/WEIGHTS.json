@@ -1,0 +1,48 @@
+{
+  "release_tag": "v2.0.0",
+  "base_repository": "Qwen/Qwen3-4B-Instruct-2507",
+  "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "assets": [
+    {
+      "name": "crop_gate.npz",
+      "destination": "model/frontend/crop_gate.npz",
+      "sha256": "6308b9f375d607eb5d554c4b97fb4b38e61436e1b01a2c0ef270966fac92e341"
+    },
+    {
+      "name": "linear.npz",
+      "destination": "model/frontend/linear.npz",
+      "sha256": "71b09f4036088b13a2ad8a0b662cf24215f67c0da76b8d5511dfac8beedc5e05"
+    },
+    {
+      "name": "gru_seed_20260927.pt",
+      "destination": "model/frontend/gru_seed_20260927.pt",
+      "sha256": "e14807739dfab9f9fd01bc5fdb5ea0caf6ae71cfcea39c1ed94255c83267cd1c"
+    },
+    {
+      "name": "gru_seed_20260928.pt",
+      "destination": "model/frontend/gru_seed_20260928.pt",
+      "sha256": "1a04c94a1cda072ca1dab602b741e06b119ed5648335a526a0aaa9ce41201c3e"
+    },
+    {
+      "name": "gru_seed_20260929.pt",
+      "destination": "model/frontend/gru_seed_20260929.pt",
+      "sha256": "bcfa065d7711ec25b643771b26442094ea0b5332660a7f2cd910528a5bd2bc90"
+    },
+    {
+      "name": "adapter_seed_20260927.safetensors",
+      "destination": "model/adapters/20260927/adapter_model.safetensors",
+      "sha256": "a01bdfb0ea9ad5bf338a0ad173729f544a14ccc0dd71deed50288c8186d29eb7"
+    },
+    {
+      "name": "adapter_seed_20260928.safetensors",
+      "destination": "model/adapters/20260928/adapter_model.safetensors",
+      "sha256": "37f3cbe1d6d8780f79c697eb449a3cdefabd78ff2d7972aed231a8a117e5fd55"
+    },
+    {
+      "name": "adapter_seed_20260929.safetensors",
+      "destination": "model/adapters/20260929/adapter_model.safetensors",
+      "sha256": "f06f44dd64b9914b2c3947a2845121bc25e517725a093605dbdd0c66e78a1b3d"
+    }
+  ],
+  "hash_provenance": "Archived audited model manifest; unchanged binaries copied for release. Publishing and download scripts rehash every asset before use."
+}

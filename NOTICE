@@ -1,0 +1,13 @@
+CAMC-JL structured correction research artifact
+Code: MIT (LICENSE)
+Author-trained weights: Apache License 2.0 (LICENSE-WEIGHTS)
+Metadata, numerical results and author-created figures: CC BY 4.0 (DATA_LICENSE.md)
+
+The selected decoder is adapted from Qwen/Qwen3-4B-Instruct-2507.
+Copyright and license notices supplied by Qwen remain applicable.
+The upstream base is Apache 2.0 and is downloaded unchanged at revision
+cdbee75f17c01a7cc42f958dc650907174af0554. Its LICENSE and README are retained by
+the downloader. The distributed LoRA adapters are modifications trained by the
+CAMC-JL contributors; they are not official Qwen releases.
+Natane and ICJS/TUFS are the source corpora for metadata provenance, not licensors
+of a full-text corpus release here. No affiliation or endorsement is implied.

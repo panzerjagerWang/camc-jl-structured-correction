@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and this versioned research artifact."
+title: "CAMC-JL metadata and numerical-results dataset and structured correction method"
+type: dataset
+authors:
+  - name: "CAMC-JL contributors"
+version: 2.0.0
+license: CC-BY-4.0
+abstract: "759 de-linked metadata records and 10,062 numerical evaluation rows, with separately licensed code and model weights. Learner text and gold corrections are excluded."
