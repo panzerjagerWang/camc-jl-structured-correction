@@ -1,8 +1,21 @@
 {
-  "status": "prepared_locally_not_published",
-  "repository_url": null,
-  "homepage_url": null,
+  "status": "published",
+  "repository_url": "https://github.com/panzerjagerWang/camc-jl-structured-correction",
+  "homepage_url": "https://panzerjagerwang.github.io/camc-jl-structured-correction/",
+  "pages_url": "https://panzerjagerwang.github.io/camc-jl-structured-correction/",
+  "pages_verified": true,
   "release_tag": "v2.0.0",
+  "weight_assets_verified": 8,
   "dataset": "CAMC-JL metadata and numerical-results dataset",
-  "raw_learner_text_released": false
+  "raw_learner_text_released": false,
+  "manuscript_revision": "2026-10-02",
+  "publication_updated_utc": "2026-10-09T03:37:12.115185+00:00",
+  "dataset_download_url": "https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/CAMC-JL-metadata-results-v2.0.0.zip",
+  "dataset_sha256": "fa2c3c5c3bc73639e1e33ac0f7bbd764dcfc436a8ec978b2fc8d40bded067d6f",
+  "dataset_records": 759,
+  "numerical_records": 10062,
+  "manuscript_pdf_url": "https://panzerjagerwang.github.io/camc-jl-structured-correction/paper/manuscript.pdf",
+  "manuscript_pdf_sha256": "6f3b857d4b0446fe7a683e485595decbed944c1523c8d292c30939dcfe3e4e10",
+  "manuscript_source_url": "https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/SLA-JEC-manuscript-source-20261002.zip",
+  "weight_asset_digest_verification": "All eight local weight SHA-256 values match GitHub-reported asset digests on 2026-10-09"
 }

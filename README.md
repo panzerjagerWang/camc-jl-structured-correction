@@ -1,7 +1,17 @@
 # CAMC-JL: structured Japanese correction
 
-Research companion to **Structured Localization and Auxiliary Adaptation for Japanese
-Grammatical Error Correction**. Project homepage: [open the site](docs/index.html).
+Research companion to **SLA-JEC: Structured Localization and Auxiliary Adaptation for Japanese
+Grammatical Error Correction**. Project homepage: [open the site](https://panzerjagerwang.github.io/camc-jl-structured-correction/).
+
+**[Paper homepage](https://panzerjagerwang.github.io/camc-jl-structured-correction/)** ·
+**[Latest manuscript PDF](https://panzerjagerwang.github.io/camc-jl-structured-correction/paper/manuscript.pdf)** ·
+**[Dataset ZIP](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/CAMC-JL-metadata-results-v2.0.0.zip)** ·
+**[Model weights](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/tag/v2.0.0)**
+
+The manuscript and pipeline figures reflect the author's revision of 2 October 2026.
+[Editable manuscript sources](docs/downloads/SLA-JEC-manuscript-source-20261002.zip)
+include LaTeX, bibliography and vector figures. The dataset version and numerical
+observations remain v2.0.0.
 
 This release package contains an **open metadata-and-numerical-results dataset**:
 759 de-linked metadata records (200 development; 559 historical test) and 10,062

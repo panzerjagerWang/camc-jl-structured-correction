@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CAMC-JL · Structured Japanese Correction</title>
+<title>SLA-JEC · CAMC-JL · Japanese Correction</title>
 <meta name="description" content="Research code, model weights, and an open metadata-and-results dataset for structured Japanese grammatical error correction.">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,10 +12,10 @@
 <section class="hero">
 <p class="eyebrow">Japanese NLP · Research artifact · 2026</p>
 <h1>Find the span.<br>Then make the correction.</h1>
-<p class="paper-title">Structured Localization and Auxiliary Adaptation<br class="wide"> for Japanese Grammatical Error Correction</p>
-<p class="lead">A fixed correction interval, a compact local editor, and an adapted language model that must justify replacing the local edit.</p>
-<div class="actions"><a class="button primary" href="paper/manuscript.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="downloads/CAMC-JL-metadata-results-v2.0.0.zip" download>Download dataset ↓</a><a class="button" data-repository hidden href="#">Code &amp; weights ↗</a></div>
-<p class="status" id="publication-status">Release package prepared. GitHub publication pending.</p>
+<p class="paper-title">SLA-JEC: Structured Localization and Auxiliary Adaptation<br class="wide"> for Japanese Grammatical Error Correction</p>
+<p class="lead">SLA-JEC combines GRU-based localization, sparse editing, context gating and auxiliary adaptation to produce one focused Japanese correction.</p>
+<div class="actions"><a class="button primary" href="paper/manuscript.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="downloads/CAMC-JL-metadata-results-v2.0.0.zip" download>Download dataset ↓</a><a class="button" data-repository href="https://github.com/panzerjagerWang/camc-jl-structured-correction">Code &amp; weights ↗</a><a class="button" href="downloads/SLA-JEC-manuscript-source-20261002.zip">Paper source ↓</a></div>
+<p class="status" id="publication-status">Open research release · v2.0.0 · Manuscript revised 2 October 2026</p>
 <div class="stats"><div><strong>759</strong><span>metadata records</span></div><div><strong>10,062</strong><span>numerical evaluation rows</span></div><div><strong>3</strong><span>trained adapter seeds</span></div><div><strong>33.04<span>%</span></strong><span>historical ExactMatch</span></div></div>
 </section>
 <section id="method">
@@ -43,9 +43,9 @@
 <div class="dataset-grid"><div><h3>Run the CPU frontend</h3><pre><code>pip install numpy==2.3.1 torch==2.11.0
 python scripts/download_weights.py --frontend-only
 python model/frontend/predict.py --list-error-types</code></pre><p class="small">Run these commands from the cloned repository. The README includes the full 4B setup and inference examples.</p></div><div><h3>Recompute numerical analyses</h3><pre><code>python scripts/reproduce_results.py</code></pre><p>The script recomputes historical means and paired cluster intervals using released numerical records. The upstream 4B base is downloaded separately at an immutable revision.</p><p class="note">A fresh GPU replay of the full auxiliary portable export remains pending. No new training or successful GPU replay is claimed by this release.</p></div></div>
-<div class="actions"><a class="button primary" data-release hidden href="#">Download weights ↗</a><a class="button" href="downloads/MODEL_CARD.md">Model card</a><a class="button" href="downloads/WEIGHTS.json">Weight checksums</a></div>
+<div class="actions"><a class="button primary" data-release href="https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/tag/v2.0.0">Download weights ↗</a><a class="button" href="downloads/MODEL_CARD.md">Model card</a><a class="button" href="downloads/WEIGHTS.json">Weight checksums</a></div>
 </section>
-<section class="cite"><h2>Cite this artifact</h2><p>CAMC-JL contributors (2026). <em>Structured Localization and Auxiliary Adaptation for Japanese Grammatical Error Correction.</em> Research manuscript and CAMC-JL metadata-and-results dataset, v2.0.0.</p><p class="small">A journal DOI is not yet available. Cite the repository URL and release version when reusing the artifact.</p></section>
+<section class="cite"><h2>Cite this artifact</h2><p>CAMC-JL contributors (2026). <em>SLA-JEC: Structured Localization and Auxiliary Adaptation for Japanese Grammatical Error Correction.</em> Research manuscript and CAMC-JL metadata-and-results dataset, v2.0.0.</p><p class="small">A journal DOI is not yet available. Cite the repository URL and release version when reusing the artifact.</p></section>
 </main>
 <footer><a class="brand" href="#top">CAMC<span>—</span>JL</a><p>Code: MIT · Author-trained weights: Apache 2.0 · Metadata, results &amp; figures: CC BY 4.0</p></footer>
 <script src="site.js"></script>
