@@ -17,5 +17,7 @@
   "manuscript_pdf_url": "https://panzerjagerwang.github.io/camc-jl-structured-correction/paper/manuscript.pdf",
   "manuscript_pdf_sha256": "6f3b857d4b0446fe7a683e485595decbed944c1523c8d292c30939dcfe3e4e10",
   "manuscript_source_url": "https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/SLA-JEC-manuscript-source-20261002.zip",
-  "weight_asset_digest_verification": "All eight local weight SHA-256 values match GitHub-reported asset digests on 2026-10-09"
+  "weight_asset_digest_verification": "All eight local weight SHA-256 values match GitHub-reported asset digests on 2026-10-09",
+  "dataset_release_tag": "v2.1.0",
+  "dataset_release_name": "JEC-Mix 1.0 public JWTD training component"
 }

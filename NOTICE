@@ -11,3 +11,12 @@ the downloader. The distributed LoRA adapters are modifications trained by the
 CAMC-JL contributors; they are not official Qwen releases.
 Natane and ICJS/TUFS are the source corpora for metadata provenance, not licensors
 of a full-text corpus release here. No affiliation or endorsement is implied.
+
+JEC-Mix 1.0 public JWTD training component: CC BY-SA 3.0.
+Original JWTD v2: Yu Tanaka, Yugo Murawaki, Daisuke Kawahara, Sadao Kurohashi,
+Kyoto University Language Media Processing Lab (2021), with underlying text by
+Japanese Wikipedia contributors. Article and pre/post revision IDs are retained.
+JEC-Mix contributors add filtering, sampling, automatic spans and provenance.
+See data/jec-mix-v1/ATTRIBUTION.md and its full CC BY-SA 3.0 license.
+No affiliation or endorsement is implied. This release does not relicense the
+whole mixed corpus, existing metadata/results, code or model weights.

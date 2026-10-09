@@ -5,13 +5,14 @@ Grammatical Error Correction**. Project homepage: [open the site](https://panzer
 
 **[Paper homepage](https://panzerjagerwang.github.io/camc-jl-structured-correction/)** ·
 **[Latest manuscript PDF](https://panzerjagerwang.github.io/camc-jl-structured-correction/paper/manuscript.pdf)** ·
-**[Dataset ZIP](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/CAMC-JL-metadata-results-v2.0.0.zip)** ·
+**[Metadata/results ZIP](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.0.0/CAMC-JL-metadata-results-v2.0.0.zip)** ·
 **[Model weights](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/tag/v2.0.0)**
 
 The manuscript and pipeline figures reflect the author's revision of 2 October 2026.
 [Editable manuscript sources](docs/downloads/SLA-JEC-manuscript-source-20261002.zip)
-include LaTeX, bibliography and vector figures. The dataset version and numerical
-observations remain v2.0.0.
+include LaTeX, bibliography and vector figures. The historical metadata/results dataset and numerical
+observations remain v2.0.0. The separate JEC-Mix 1.0 JWTD training component is
+released in repository version v2.1.0.
 
 This release package contains an **open metadata-and-numerical-results dataset**:
 759 de-linked metadata records (200 development; 559 historical test) and 10,062
@@ -22,6 +23,35 @@ recipe, figures, and checksummed model-weight download instructions.
 The full learner sentences, gold spans/revisions and raw predictions are excluded
 because redistribution permission has not been established. This is an evaluation
 dataset, not a freely redistributable full-text training corpus.
+
+## JEC-Mix 1.0: open JWTD training component
+
+We open-source **50,000 full-text Japanese correction pairs** derived from the
+**official JWTD v2 training partition**, under **CC BY-SA 3.0**. The component
+retains literal source/corrected sentences, automatic spans, native categories,
+article/revision metadata and source-line hashes across 40,439 article groups.
+[Download JSONL gzip](https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.1.0/JEC-Mix-v1.0-JWTD-train-50000.jsonl.gz) ·
+[Dataset card](data/jec-mix-v1/README.md) · [Attribution](data/jec-mix-v1/ATTRIBUTION.md) ·
+[Manifest/checksums](data/jec-mix-v1/manifest.json).
+
+**JEC-Mix: Japanese Error Correction Mixed-source Corpus** contains 110,502
+core and auxiliary records: 200 development + 559 historical learner records,
+5,069 teacher-generated, 54,674 synthetic and 50,000 JWTD rows. These are distinct
+sources and task roles, not 110,502 human learner annotations. The whole mix is
+**not fully open**; only the JWTD full-text component is released here. Raw
+Natane/ICJS learner texts, teacher/synthetic rows, protected forms and evaluation
+requests/predictions are excluded. Publisher test/gold are not included or parsed.
+
+Existing published model weights predate JWTD. A later matched locator study
+found the Wikipedia arm weaker than its NoWiki control. Dataset size does not
+establish SOTA, and this dataset release provides no newly trained weights.
+The per-row transformation math and a no-dependency verifier are public:
+
+```bash
+python scripts/verify_jec_mix_jwtd.py JEC-Mix-v1.0-JWTD-train-50000.jsonl.gz
+# Optionally check every original line in the official training member:
+python scripts/verify_jec_mix_jwtd.py JEC-Mix-v1.0-JWTD-train-50000.jsonl.gz --publisher-train train.jsonl
+```
 
 ## Contents
 
@@ -82,8 +112,8 @@ retrospective annotation agreement, not classroom effectiveness.
 
 Numerical data structure, release IDs, complete method/seed coverage and historical
 means were checked during packaging. Existing compact-frontend verification is
-retained. A fresh GPU replay of the exported auxiliary 4B package is still pending;
-do not treat packaging as successful end-to-end reproduction.
+retained. The existing exported auxiliary 4B package was validated locally on GPU on
+9 October 2026. This dataset release adds no model weights.
 
 Code is MIT; author-trained weights are Apache 2.0; author-created metadata,
 scores and figures are CC BY 4.0. See LICENSE, LICENSE-WEIGHTS, DATA_LICENSE.md and NOTICE.

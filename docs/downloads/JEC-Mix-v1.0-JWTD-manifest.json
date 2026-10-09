@@ -1,0 +1,146 @@
+{
+  "dataset_name": "JEC-Mix",
+  "expanded_name": "Japanese Error Correction Mixed-source Corpus",
+  "dataset_version": "1.0",
+  "public_component": "JWTD v2 training subset",
+  "release_tag": "v2.1.0",
+  "records": 50000,
+  "article_groups": 40439,
+  "role": "auxiliary training only",
+  "source_split": "train",
+  "license": "CC-BY-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "artifact": {
+    "name": "JEC-Mix-v1.0-JWTD-train-50000.jsonl.gz",
+    "download_url": "https://github.com/panzerjagerWang/camc-jl-structured-correction/releases/download/v2.1.0/JEC-Mix-v1.0-JWTD-train-50000.jsonl.gz",
+    "gzip_bytes": 20878393,
+    "gzip_sha256": "d4dc00fa77f4eaff4cd0c38ca4cea25c3a009a83ed279b21a646117ee94911f5",
+    "jsonl_bytes": 73901779,
+    "jsonl_sha256": "e30fc2cd36c15bad6fd35373e1a413fd4a84b0712af9473ad308fad7f32cc8f8",
+    "compression": "gzip, deterministic zero mtime and empty filename"
+  },
+  "source": {
+    "dataset": "Japanese Wikipedia Typo Dataset version 2.0",
+    "authors": [
+      "Yu Tanaka",
+      "Yugo Murawaki",
+      "Daisuke Kawahara",
+      "Sadao Kurohashi"
+    ],
+    "publisher_url": "https://nlp.ist.i.kyoto-u.ac.jp/index.php?%E6%97%A5%E6%9C%AC%E8%AA%9EWikipedia%E5%85%A5%E5%8A%9B%E8%AA%A4%E3%82%8A%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88",
+    "publisher_page_sha256": "639d807e8635bd0cb948b4e8f16c1b6416d9953e2268de5ba4c44cd6edfcc706",
+    "archive_url": "https://nlp.ist.i.kyoto-u.ac.jp/nl-resource/JWTD/jwtd_v2.0.tar.gz",
+    "archive_sha256": "2c6d864905adbac75a2c0181aa8796c81d3f86df41aa8bf79b37d47ee8ec5025",
+    "training_member_sha256": "f13d8b317e2456408f0522e9f0115050941a403afca2b06751d5868c203abdc1",
+    "training_member_rows": 696189,
+    "publisher_checksum_supplied": false,
+    "other_publisher_splits_extracted_or_parsed": false
+  },
+  "conversion": {
+    "producer_sha256": "4b8ab14709d08602c7e90f5ead19a98ff183e47a51fc64c673effe033be49504",
+    "seed": 20261009,
+    "sampler": "Algorithm R over first eligible normalized correction pair in pinned publisher line order",
+    "eligible_unique_pairs": 621915,
+    "content_normalized": false,
+    "identity_normalization": "NFKC and remove Unicode whitespace; identity/screening only",
+    "offset_unit": "Python Unicode code points, zero-based half-open source interval",
+    "native_diff_rule": "Exactly one native diff with exactly one literal application reproducing complete target",
+    "span_rule": "Minimal difference hull; pure insertion/deletion anchored to right unchanged character then left",
+    "source_length_range": [
+      4,
+      256
+    ],
+    "span_length_range": [
+      1,
+      40
+    ],
+    "replacement_length_limit": "max(44, 4 * span_length)",
+    "native_not_typo_retained": false,
+    "human_annotated_minimal_spans": false,
+    "ten_learner_category_mapping": null
+  },
+  "quarantine_summary": {
+    "all_raw_training_and_old_auxiliary_edges_used_before_filter_or_sampling": true,
+    "graph_nodes": 1762717,
+    "graph_components": 323118,
+    "excluded_components": 15,
+    "excluded_raw_wikipedia_rows": 14,
+    "excluded_teacher_rows": 24,
+    "scope": "Screening against the explicitly supplied protected forms; does not certify absence of every semantic or pretraining overlap",
+    "private_protected_forms_released": false,
+    "exact_public_graph_rebuild_available": false,
+    "independent_joint_audit_sha256": "778444f8e9399af40d2219b55a7edda799664adb925b88fa9126006c4ca38a3c"
+  },
+  "mixed_collection_counts": {
+    "learner_development": 200,
+    "learner_historical_test_not_training": 559,
+    "teacher_auxiliary": 5069,
+    "synthetic_auxiliary": 54674,
+    "jwtd_auxiliary": 50000,
+    "auxiliary_total": 109743,
+    "total_core_and_auxiliary": 110502,
+    "whole_mix_fully_open": false,
+    "full_text_public_rows_in_this_release": 50000,
+    "new_human_learner_annotations": false
+  },
+  "native_categories": {
+    "deletion": 10353,
+    "insertion_a": 6333,
+    "insertion_b": 376,
+    "kanji-conversion_a": 19798,
+    "kanji-conversion_b": 2076,
+    "others": 2482,
+    "substitution": 7853,
+    "transposition": 729
+  },
+  "schema": {
+    "top_level_fields": [
+      "id",
+      "text",
+      "error_type",
+      "gold_span_start",
+      "gold_span_end",
+      "gold_span",
+      "gold_revision",
+      "corrected_text",
+      "source",
+      "source_split",
+      "source_line",
+      "source_line_sha256",
+      "article_group",
+      "normalized_source_sha256",
+      "normalized_corrected_sha256",
+      "normalized_pair_sha256",
+      "publisher_diff_start",
+      "publisher_diff_end",
+      "empty_interval_anchor",
+      "publisher_metadata",
+      "joint_component_id"
+    ],
+    "publisher_metadata_fields": [
+      "page",
+      "title",
+      "pre_rev",
+      "post_rev",
+      "diffs",
+      "lstm_average_likelihood"
+    ],
+    "article_link_template": "https://ja.wikipedia.org/wiki/?curid={page}",
+    "revision_link_template": "https://ja.wikipedia.org/w/index.php?oldid={pre_rev_or_post_rev}",
+    "revision_history_template": "https://ja.wikipedia.org/w/index.php?curid={page}&action=history",
+    "diff_link_template": "https://ja.wikipedia.org/w/index.php?oldid={pre_rev}&diff={post_rev}"
+  },
+  "model_status": {
+    "published_v2_0_weights_predate_jwtd": true,
+    "jwtd_locator_matched_arm_improved_over_nowiki_control": false,
+    "global_sota_demonstrated": false,
+    "new_weights_in_this_release": false
+  },
+  "public_omissions": [
+    "learner source texts and corrections",
+    "teacher and synthetic raw rows",
+    "protected forms and auxiliary bridges",
+    "development/evaluation requests and raw predictions",
+    "local machine paths and credentials"
+  ]
+}
